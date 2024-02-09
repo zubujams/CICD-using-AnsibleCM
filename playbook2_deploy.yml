@@ -12,4 +12,7 @@
   - name: Copy the artifact from target folder to current directory
     copy: src=/tmp/projectcode/target/addressbook.war dest=/tmp/projectcode/target/ remote_src=yes
   - name: build the dockerfile
+    command: chdir={{dest_path}} docker build -t  myimageansible .
+  - name: Run the image and deploy app on container
+    command: docker run -d -P myimageansible
     
