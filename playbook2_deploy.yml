@@ -1,0 +1,15 @@
+- name: Playbook for integration and Deployment
+  hosts: webserver
+  become: true
+  vars:
+    repopath: (URL of desired repo)
+    dest_path: /tmp/projectcode
+  tasks:
+  - name: Clone the repo which has the code on the worker node
+    git: repo={{repopath}} dest={{dest_path}}
+  - name: Execute Maven command to build the code
+    command: chdir={{dest_path}} mvn package
+  - name: Copy the artifact from target folder to current directory
+    copy: src=/tmp/projectcode/target/addressbook.war dest=/tmp/projectcode/target/ remote_src=yes
+  - name: build the dockerfile
+    
