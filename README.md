@@ -3,12 +3,12 @@ CI/CD Deployment Using Ansible CM Tool
 
 ![Screenshot 2024-02-08 at 5 10 08 PM](https://github.com/zubujams/CICD-using-AnsibleCM/assets/52971863/46baa38b-072c-4a52-bb4e-ab9d5f3848b3)
 
-#### Step 1: Configuring Jenkins as an Ansible Provisioning Machine
+### Step 1: Configuring Jenkins as an Ansible Provisioning Machine
 To use Jenkins as an Ansible provisioning machine, you first need to ensure that both Jenkins and Ansible are installed on the server. If Ansible is not yet installed, you can install it using your server's package manager (e.g., apt for Ubuntu, yum for CentOS).
 
 
 
-#### Step 2: Install Ansible Plugins in Jenkins CI Server
+### Step 2: Install Ansible Plugins in Jenkins CI Server
 Go to your Jenkins dashboard, navigate to Manage Jenkins > Manage Plugins.
 In the Available tab, search for "Ansible" and install the following plugins:
 Ansible Plugin: This allows Jenkins to invoke Ansible playbooks.
@@ -18,7 +18,7 @@ After installation, you might need to restart Jenkins for the changes to take ef
 
 
 
-#### Step 3: Ansible Playbooks Preparation
+### Step 3: Ansible Playbooks Preparation
 You'll prepare two main Ansible playbooks as described:
 
 ##### Playbook 1: Installation of Java, Maven, and Docker
@@ -43,7 +43,7 @@ Run the Docker container to deploy the application.
 
 
 
-#### Step 4: Dockerfile and Deployment Artifacts
+### Step 4: Dockerfile and Deployment Artifacts
 Ensure you have a Dockerfile prepared in your project's repository that correctly packages the WAR file into a Tomcat (or your chosen web container) Docker image. The Dockerfile should perform the following:
 
 Start from a base Tomcat/Jetty image.
@@ -52,7 +52,7 @@ Configure any necessary environment variables or settings required for your appl
 
 
 
-#### Step 5: Jenkins Pipeline Configuration
+### Step 5: Jenkins Pipeline Configuration
 In Jenkins, you will set up a pipeline job that defines the stages of your CI/CD process, integrating the Ansible playbooks. Use the pipeline syntax provided in the PDF as a template, adjusting URLs and paths as necessary:
 
 Clone the repo: This stage clones your project's repository into the Jenkins workspace.
