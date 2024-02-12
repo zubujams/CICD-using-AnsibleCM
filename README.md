@@ -14,12 +14,12 @@ In the Available tab, search for "Ansible" and install the following plugins:
 Ansible Plugin: This allows Jenkins to invoke Ansible playbooks.
 Pipeline Utility Steps: Useful for reading files within the Jenkins pipeline, which can be handy for Ansible inventory or variable files.
 
-After installation, you might need to restart Jenkins for the changes to take effect.
+After installation, restart Jenkins for the changes to take effect.
 
 
 
 ### Step 3: Ansible Playbooks Preparation
-You'll prepare two main Ansible playbooks as described:
+Prepare two main Ansible playbooks as described:
 
 ##### Playbook 1: Installation of Java, Maven, and Docker
 This playbook targets the provisioning of essential tools required for the build and deployment processes. It updates the package lists, installs Maven and Docker, and ensures the Docker service is running. Here's an overview of the tasks:
